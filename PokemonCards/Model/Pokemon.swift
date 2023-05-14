@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - Welcome
-struct Welcome: Codable {
+// MARK: - Pokemon
+struct Pokemon: Codable {
     let cards: [Card]
 }
 
@@ -17,8 +17,8 @@ struct Card: Codable {
     let id, name: String
     let nationalPokedexNumber: Int?
     let imageURL, imageURLHiRes: String
-    let types: [RetreatCost]?
-    let supertype: Supertype
+    let types: [String]?
+    let supertype: String?
     let subtype, evolvesFrom, hp: String?
     let number, artist, rarity: String
     let series: Series
@@ -91,10 +91,4 @@ enum Series: String, Codable {
     case sunMoon = "Sun & Moon"
     case swordShield = "Sword & Shield"
     case xy = "XY"
-}
-
-enum Supertype: String, Codable {
-    case energy = "Energy"
-    case pokémon = "Pokémon"
-    case trainer = "Trainer"
 }
